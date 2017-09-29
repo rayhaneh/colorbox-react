@@ -24,6 +24,13 @@ class App extends Component {
     this.state = {
       colors
     }
+
+    setInterval(() => {
+      const colors = [...this.state.colors]
+      const index = Math.floor(Math.random() * NUM_BOXES)
+      colors[index] = this.getRandomColor()
+      this.setState({colors})
+    }, 300)
   }
 
   getRandomColor () {
